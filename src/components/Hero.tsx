@@ -13,11 +13,11 @@ export default function Hero() {
             iPhone 16<span className="text-red-500">e</span>
           </h1>
           <h2 className="text-[64px] font-bold tracking-tight text-foreground max-w-4xl leading-[1.05]">
-            Latest iPhone. Greatest price.
+            Latest. Greatest.
           </h2>
           <p className="text-[28px] font-medium max-w-2xl leading-tight">
-            <span className="text-blue-400">Built for </span>
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Apple Intelligence</span>
+            <span className="text-blue-400">With </span>
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Actual Intelligence</span>
             <span className="text-foreground">.</span>
           </p>
 
