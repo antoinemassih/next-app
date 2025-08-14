@@ -31,7 +31,7 @@ export default function Features() {
             <div className="text-lg font-semibold mb-2">Bright display</div>
             <p className="text-muted-foreground">Super‑bright OLED with adaptive refresh. Color‑accurate and gentle on the eyes.</p>
             <div className="mt-3 flex flex-wrap gap-[10px]">
-              <span className="rounded-full border border-white/12 bg-white/6 px-3 py-2 text-[13px] font-semibold">6.3" OLED</span>
+              <span className="rounded-full border border-white/12 bg-white/6 px-3 py-2 text-[13px] font-semibold">6.3&quot; OLED</span>
               <span className="rounded-full border border-white/12 bg-white/6 px-3 py-2 text-[13px] font-semibold">1200 nits</span>
             </div>
           </article>

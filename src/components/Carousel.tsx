@@ -105,8 +105,9 @@ export default function Carousel() {
       else go(index);
     };
 
-    vp.addEventListener("touchstart", onTouchStart, { passive: true } as any);
-    vp.addEventListener("touchmove", onTouchMove, { passive: true } as any);
+    const passiveOpts: AddEventListenerOptions = { passive: true };
+    vp.addEventListener("touchstart", onTouchStart, passiveOpts);
+    vp.addEventListener("touchmove", onTouchMove, passiveOpts);
     vp.addEventListener("touchend", onTouchEnd);
 
     // initial position
@@ -115,9 +116,9 @@ export default function Carousel() {
     return () => {
       window.removeEventListener("resize", onResize);
       document.removeEventListener("keydown", onKey);
-      vp.removeEventListener("touchstart", onTouchStart as any);
-      vp.removeEventListener("touchmove", onTouchMove as any);
-      vp.removeEventListener("touchend", onTouchEnd as any);
+      vp.removeEventListener("touchstart", onTouchStart, passiveOpts);
+      vp.removeEventListener("touchmove", onTouchMove, passiveOpts);
+      vp.removeEventListener("touchend", onTouchEnd);
     };
   }, [index]);
 

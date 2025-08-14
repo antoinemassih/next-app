@@ -62,7 +62,7 @@ export default function Hero() {
               priority
             />
           </figure>
-          <p className="text-xs text-muted-foreground">This is a concept page inspired by Apple's layout patterns. Not affiliated with Apple; no Apple assets used.</p>
+          <p className="text-xs text-muted-foreground">This is a concept page inspired by Apple&apos;s layout patterns. Not affiliated with Apple; no Apple assets used.</p>
         </div>
       </div>
     </section>
