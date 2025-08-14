@@ -15,13 +15,14 @@ export default function Home() {
     <div>
       <Header />
       <Hero />
-      <Features />
+     
+      <FeatureGrid />
       <River />
       <Carousel />
       <Gallery />
       <Specs />
       <BuyCta />
-      <FeatureGrid />
+      
       <Compare />
       <Footer />
     </div>
