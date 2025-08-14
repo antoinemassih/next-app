@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import River from "@/components/River";
 import Carousel from "@/components/Carousel";
 import Gallery from "@/components/Gallery";
+import MemojiStrip from "@/components/MemojiStrip";
 import BuyCta from "@/components/BuyCta";
 import FeatureGrid from "@/components/FeatureGrid";
 import Compare from "@/components/Compare";
@@ -19,6 +20,7 @@ export default function Home() {
       <FeatureGrid />
       <River />
       <Carousel />
+      <MemojiStrip />
       <Gallery />
     
       
