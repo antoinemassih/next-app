@@ -23,7 +23,7 @@ export default function FeatureGrid() {
             <div className="flex flex-col items-center text-center space-y-2">
               <p className="text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">with proprietary</p>
               <p className="text-[30px] md:text-[30px] font-bold leading-tight bg-gradient-to-r from-fuchsia-500 via-rose-500 to-amber-400 bg-clip-text text-transparent">Rudy Intelligence</p>
-              <p className="text-[14px] font-medium text-neutral-600 dark:text-neutral-300">for the toughest<br/>strategic & creative marketing</p>
+              <p className="text-[14px] font-medium text-neutral-600 dark:text-neutral-300">Engineered for<br/>strategic & creative missions</p>
             </div>
           </div>
 
@@ -35,7 +35,7 @@ export default function FeatureGrid() {
               <p className="text-[42px] font-bold leading-none text-neutral-900 dark:text-white">more</p>
             </div>
             <p className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300">
-              Apple project performance
+              Project brilliance
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function FeatureGrid() {
               <p className="text-[42px] font-bold leading-none text-neutral-900 dark:text-white mt-2">24 hours</p>
             </div>
             <p className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300">
-              Project playback<sup className="text-xs">3</sup>
+            Zero downtime. <br></br>Zero drama.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function FeatureGrid() {
             <div className="flex flex-col items-center space-y-2">
               <p className="text-sm font-medium text-neutral-500">Super-high-resolution</p>
               <p className="text-[42px] font-bold leading-none text-neutral-900 dark:text-white">96MP</p>
-              <p className="text-[20px] font-medium leading-none text-neutral-900 dark:text-white">attention to detail</p>
+              <p className="text-[15px] font-medium leading-none text-neutral-900 dark:text-white">focus on every pixel and punctuation mark.</p>
             </div>
           </div>
 
@@ -120,7 +120,7 @@ export default function FeatureGrid() {
                 Brilliant Display
               </p>
               <p className="text-[14px] font-medium text-neutral-600 dark:text-neutral-300">
-                of every possible capability.
+              of skill, innovation, and results.
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function FeatureGrid() {
             </div>
             <div className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300 flex flex-col items-center space-y-1">
               <span>Seamless Integrations</span>
-              <span className="text-[20px] font-medium text-neutral-900 dark:text-neutral-300">with anyone</span>
+              <span className="text-[20px] font-medium text-neutral-900 dark:text-neutral-300">Works with anyone. Even Mondays.</span>
             </div>
           </div>
         </div>

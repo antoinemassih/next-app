@@ -29,7 +29,7 @@ export default function Hero() {
             Rudy <span className="text-blue-500">Series 10</span>
           </h1>
           <h2 className="text-[64px] font-bold tracking-tight text-foreground max-w-4xl leading-[1.05]">
-            Latest. Greatest.
+          The most powerful Rudy ever.
           </h2>
           <p className="text-[28px] font-medium max-w-2xl leading-tight">
             <span className="text-blue-400">With </span>

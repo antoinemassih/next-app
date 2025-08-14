@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const slides = [
   {
-    quote: "Raghda was the reason I didn’t quit my job after just a few weeks of joining the company. Nine and a half years later, I’m still here. Thank you, Raghoood. ❤️❤️❤️",
+    quote: "Raghdah was the reason I didn’t quit my job after just a few weeks of joining the company. Nine and a half years later, I’m still here. Thank you, Raghoood. ❤️❤️❤️",
     author: "Apple Marcom emplloyee",
     role: "",
     background: "bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900",

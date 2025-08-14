@@ -69,7 +69,7 @@ const today: Item[] = [
   { icon: "chip", text: "Multi-core strategic thinking. runs on experience and instinct." },
   { icon: "drive", text: "Expanded capacity for big-picture campaigns and micro-detail resolution." },
   { icon: "spark", text: "Brilliance now in HDR." },
-  { icon: "energy", text: "Fuels multiple campaigns, energyizing the team." },
+  { icon: "energy", text: "Fuels multiple campaigns, energizing the team." },
   { icon: "wifi", text: "Global network, seamless collaboration, and industrial grade charisma." },
 ];
 
