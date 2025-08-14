@@ -4,20 +4,29 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const slides = [
   {
-    title: "Survival of the toughest.",
-    subtitle: "2",
-    background: "bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"
+    quote: "Rudy transformed our launch from good to unforgettable.",
+    author: "Alex Rivera",
+    role: "VP Marketing, Acme Co.",
+    background: "bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900",
   },
   {
-    title: "Advanced camera system with 48MP Fusion camera.",
-    subtitle: "",
-    background: "bg-gradient-to-br from-emerald-800 via-teal-800 to-cyan-800"
+    quote: "The strategic clarity and creative discipline were next-level.",
+    author: "Priya Shah",
+    role: "Founder, Nova Labs",
+    background: "bg-gradient-to-br from-emerald-800 via-teal-800 to-cyan-800",
   },
   {
-    title: "All-day battery life with fast charging.",
-    subtitle: "",
-    background: "bg-gradient-to-br from-orange-800 via-red-800 to-pink-800"
-  }
+    quote: "I've never seen a team move this fast without compromising quality.",
+    author: "Marcus Lee",
+    role: "Head of Product, Orbit",
+    background: "bg-gradient-to-br from-orange-800 via-red-800 to-pink-800",
+  },
+  {
+    quote: "Rudy is the rare mix of producer, strategist, and creative director.",
+    author: "Sofia Martins",
+    role: "Creative Lead, Beacon",
+    background: "bg-gradient-to-br from-slate-800 via-gray-800 to-zinc-900",
+  },
 ];
 
 export default function Carousel() {
@@ -141,87 +150,41 @@ export default function Carousel() {
     <section id="carousel" className="py-16 scroll-mt-20">
       <div className="container mx-auto px-4">
         <SectionHeader 
-          title="Innovation in motion"
-          subtitle="Discover the features that set Phone 16e apart"
+          title="Works hard. Plays nice"
+          subtitle="Discover partnerships that sets Rudy up for success"
           className="mb-16"
         />
         <div
           ref={viewportRef}
-          className="relative overflow-hidden rounded-3xl"
+          className="relative overflow-hidden rounded-3xl h-[640px] md:h-[720px]"
           aria-live="polite"
         >
           <div
             ref={trackRef}
-            className="flex [transition-property:transform] duration-1000 [transition-timing-function:cubic-bezier(.25,.46,.45,.94)] will-change-transform"
+            className="flex h-full [transition-property:transform] duration-1000 [transition-timing-function:cubic-bezier(.25,.46,.45,.94)] will-change-transform"
           >
             {slides.map((slide, i) => (
-              <div key={i} className={`min-w-full ${slide.background} relative flex items-center justify-center px-8 py-16 text-white`}>
-                <div className="flex max-w-6xl items-center gap-12">
-                  {/* Text content */}
-                  <div className="flex-1">
-                    <h2 className="max-w-lg text-[32px] font-semibold leading-tight tracking-tight md:text-[40px]">
-                      {slide.title}
-                      {slide.subtitle && (
-                        <sup className="ml-1 text-[20px] font-normal">{slide.subtitle}</sup>
-                      )}
-                    </h2>
-                  </div>
-                  
-                  {/* Phone mockup */}
-                  <div className="relative">
-                    <div className="relative h-[500px] w-[250px] rounded-[50px] border-4 border-neutral-800 bg-black shadow-2xl">
-                      {/* Screen */}
-                      <div className="absolute inset-3 overflow-hidden rounded-[42px] bg-gradient-to-b from-blue-400 to-purple-600">
-                        {/* Dynamic Island */}
-                        <div className="absolute left-1/2 top-3 h-8 w-32 -translate-x-1/2 rounded-full bg-black"></div>
-                        
-                        {/* Status bar */}
-                        <div className="absolute left-6 top-4 flex items-center gap-1 text-white">
-                          <div className="text-xs font-medium">9:41</div>
-                        </div>
-                        <div className="absolute right-6 top-4 flex items-center gap-1 text-white">
-                          <div className="flex gap-1">
-                            <div className="h-2 w-1 rounded-full bg-white"></div>
-                            <div className="h-2 w-1 rounded-full bg-white"></div>
-                            <div className="h-2 w-1 rounded-full bg-white"></div>
-                            <div className="h-2 w-1 rounded-full bg-white/50"></div>
-                          </div>
-                          <div className="ml-1 text-xs">100%</div>
-                        </div>
-                        
-                        {/* Time display */}
-                        <div className="absolute left-1/2 top-24 -translate-x-1/2 text-center text-white">
-                          <div className="text-sm opacity-75">Monday, September 9</div>
-                          <div className="text-6xl font-thin">9:41</div>
-                        </div>
-                        
-                        {/* Lock screen elements */}
-                        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                          <div className="h-1 w-32 rounded-full bg-white/30"></div>
-                        </div>
-                        
-                        {/* Bottom icons */}
-                        <div className="absolute bottom-6 left-6">
-                          <div className="h-8 w-8 rounded-lg bg-white/20"></div>
-                        </div>
-                        <div className="absolute bottom-6 right-6">
-                          <div className="h-8 w-8 rounded-lg bg-white/20"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Hand holding phone */}
-                    <div className="absolute -bottom-12 -left-16 h-24 w-24 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 opacity-80"></div>
-                    <div className="absolute -bottom-8 -right-12 h-20 w-20 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 opacity-60"></div>
-                  </div>
-                </div>
+              <div
+                key={i}
+                className={`min-w-full h-full relative flex items-center justify-center px-8 py-8 text-white`}
+              >
+                <div className={`${slide.background} absolute inset-0`} aria-hidden="true" />
+                <figure className="relative max-w-4xl text-center space-y-5">
+                  <blockquote className="text-[22px] md:text-[30px] leading-relaxed font-medium">
+                    “{slide.quote}”
+                  </blockquote>
+                  <figcaption className="text-sm md:text-base text-white/80">
+                    <span className="font-semibold text-white">{slide.author}</span>
+                    {slide.role && <span className="ml-2 text-white/70">— {slide.role}</span>}
+                  </figcaption>
+                </figure>
               </div>
             ))}
           </div>
         </div>
         
         {/* Navigation controls */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <div className="flex items-center gap-4 rounded-full bg-black/80 px-6 py-3 backdrop-blur-sm">
             {/* Play/Pause button */}
             <button

@@ -68,27 +68,27 @@ export default function River() {
     <section ref={sectionRef} className="border-t border-border py-20 scroll-mt-24">
       <div className="container px-4">
         <SectionHeader 
-          title="Designed for life"
-          subtitle="Every detail crafted to enhance your everyday experience"
+          title="Like a producer. Unlike any producer."
+          subtitle="Goes beyond what you can imagine of a producer"
           className="mb-16"
         />
         <div className="space-y-16">
           <Row
             title="Built to go places."
-            body="All‑day power with smart charge optimization so you can scroll, stream, and shoot longer."
+            body="All-day energy and passion pushes Rudy beyond .COM to explore all corners of the world."
             image={airpodsImg}
             alt="AirPods product image"
           />
           <Row
             title="Bright, accurate, adaptive."
-            body="A color‑true OLED that’s comfortable indoors and confident in sunlight."
+            body="Brillaint, sharp wit translates to indoor, outdoor , social and work activities"
             reverse
             image={macImg}
             alt="Mac product image"
           />
           <Row
-            title="Fashion, forward."
-            body="Snappy app launches, fluid gaming, and efficient power use from our A16e‑class design."
+            title="Limited Edition. Unlimited Ambition."
+            body="Fashion-forward operating system.Aesthetic precision with passion thats always in season."
             image={watchImg}
             alt="Apple Watch product image"
           />
