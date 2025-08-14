@@ -7,8 +7,7 @@ export default function FeatureGrid() {
         <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row">
           <div className="max-w-lg">
             <h2 className="text-balance text-[32px] font-semibold leading-tight tracking-tight md:text-[40px]">
-              There's never been<br />
-              a better time to upgrade.
+              Designed to make a difference
             </h2>
             <p className="mt-4 text-[17px] text-neutral-600 dark:text-neutral-300">
               A few ways <span className="font-semibold text-neutral-900 dark:text-white">iPhone 16e</span> gives you more.

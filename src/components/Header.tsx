@@ -14,7 +14,7 @@ export default function Header() {
                   "radial-gradient(circle at 30% 30%, #ffffff88, #ffffff00), conic-gradient(from 0deg, #6db7ff, #b69cff, #ff7ad9, #49e79f, #ffd27a, #6db7ff)",
               }}
             />
-            <span>Velar</span>
+            <span></span>
           </div>
           <nav className="hidden sm:flex items-center gap-4 text-[14px] text-muted-foreground">
             <a href="#features" className="hover:text-foreground">Features</a>
@@ -27,7 +27,7 @@ export default function Header() {
               asChild
               className="ml-2"
             >
-              <a href="#buy">Buy</a>
+              <a href="#buy">Book</a>
             </AppleButton>
           </nav>
         </div>

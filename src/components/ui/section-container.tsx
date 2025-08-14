@@ -7,6 +7,7 @@ interface SectionContainerProps extends React.HTMLAttributes<HTMLElement> {
   background?: "default" | "neutral" | "transparent";
   padding?: "default" | "large" | "small";
   scrollOffset?: boolean;
+  surface?: boolean; // wrap content in white rounded box
 }
 
 const SectionContainer = React.forwardRef<HTMLElement, SectionContainerProps>(
@@ -17,6 +18,7 @@ const SectionContainer = React.forwardRef<HTMLElement, SectionContainerProps>(
     background = "default",
     padding = "default",
     scrollOffset = true,
+    surface = true,
     ...props 
   }, ref) => {
     const baseClasses = cn(
@@ -36,8 +38,14 @@ const SectionContainer = React.forwardRef<HTMLElement, SectionContainerProps>(
 
     return (
       <section className={baseClasses} ref={ref} {...props}>
-        <div className="container mx-auto px-4">
-          {children}
+        <div className="mx-auto w-full max-w-[1200px] px-4 md:px-6">
+          {surface && background !== "transparent" ? (
+            <div className="rounded-3xl bg-white border border-[var(--border)] shadow-sm p-6 md:p-10">
+              {children}
+            </div>
+          ) : (
+            children
+          )}
         </div>
       </section>
     );

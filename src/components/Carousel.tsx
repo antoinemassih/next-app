@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const slides = [
   {
-    title: "The first iPhone built for Apple Intelligence. Personal, private, powerful.",
+    title: "Survival of the toughest.",
     subtitle: "2",
     background: "bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"
   },

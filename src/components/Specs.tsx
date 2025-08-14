@@ -14,7 +14,7 @@ export default function Specs() {
       <div className="container mx-auto px-4">
         <SectionHeader 
           title="Tech specs"
-          subtitle="The details that make the difference"
+          subtitle="Engineered for limitless creativity."
           className="mb-12"
         />
         <Accordion type="single" collapsible className="w-full">

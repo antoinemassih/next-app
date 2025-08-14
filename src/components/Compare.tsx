@@ -1,5 +1,8 @@
 import { AppleButton } from "@/components/ui/apple-button";
 import { SectionContainer } from "@/components/ui/section-container";
+import Image, { type StaticImageData } from "next/image";
+import iphoneProMaxImg from "../../assets/compare_iphone16_pro_max_natural_titanium_large.png";
+import iphonePinkImg from "../../assets/compare_iphone16_pink_large.png";
 
 function ColorDot({ className, label }: { className: string; label: string }) {
   return (
@@ -64,23 +67,37 @@ function ProductTile(props: {
   buyHref: string;
   colors: { className: string; label: string }[];
   features: string[];
+  image?: StaticImageData;
 }) {
-  const { title, imageAlt, price, learnHref, buyHref, colors, features } = props;
+  const { title, imageAlt, price, learnHref, buyHref, colors, features, image } = props;
   return (
     <li className="flex w-full flex-col p-2 md:p-3">
       <h3 className="px-2 pt-2 text-center">
-        <span className="block text-balance text-2xl font-semibold tracking-tight" aria-hidden>
+        <span className="block text-balance text-3xl md:text-4xl font-semibold tracking-tight" aria-hidden>
           {title}
         </span>
         <span className="sr-only">{title}</span>
       </h3>
 
-      <div className="mt-3 aspect-[5/4] w-full overflow-hidden">
-        <div className="flex h-full items-center justify-center text-center text-[11px] text-neutral-500">
-          <span className="px-3 py-1" aria-label={imageAlt}>
-            {imageAlt}
-          </span>
-        </div>
+      <div className="mt-3 aspect-[5/4] w-full overflow-hidden p-10 md:p-14 xl:p-16">
+        {image ? (
+          <div className="relative h-full w-full">
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={false}
+            />
+          </div>
+        ) : (
+          <div className="flex h-full items-center justify-center text-center text-[11px] text-neutral-500">
+            <span className="px-3 py-1" aria-label={imageAlt}>
+              {imageAlt}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="mt-4 px-2">
@@ -88,13 +105,13 @@ function ProductTile(props: {
           {colors.map((c, i) => (
             <ColorDot key={i} className={c.className} label={c.label} />
           ))}
-          <li className="text-[13px] text-neutral-500" aria-hidden>
+          <li className="text-sm md:text-base text-neutral-500" aria-hidden>
             +
           </li>
         </ul>
       </div>
 
-      <p className="mt-1.5 px-2 text-center text-[14px] font-medium text-neutral-800 dark:text-neutral-200">{price}</p>
+      <p className="mt-1.5 px-2 text-center text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200">{price}</p>
 
       <div className="mt-3 flex items-center justify-center gap-3 px-2">
         {learnHref && (
@@ -103,7 +120,7 @@ function ProductTile(props: {
             asChild
             aria-label={`Learn more about ${title}`}
           >
-            <a href={learnHref}>
+            <a href={learnHref} className="text-base md:text-lg">
               Learn more <span aria-hidden>›</span>
             </a>
           </AppleButton>
@@ -111,14 +128,14 @@ function ProductTile(props: {
         <AppleButton
           variant="primary"
           asChild
-          aria-label={`Buy ${title}`}
+          aria-label={`Book ${title}`}
         >
-          <a href={buyHref}>Buy</a>
+          <a href={buyHref} className="text-base md:text-lg">Book</a>
         </AppleButton>
       </div>
 
       <div className="mt-4 px-2">
-        <ul className="grid gap-3 text-[14px] font-medium text-neutral-900 dark:text-neutral-100" role="list">
+        <ul className="grid gap-3 text-base md:text-lg font-medium text-neutral-900 dark:text-neutral-100" role="list">
           {features.map((f, i) => (
             <li key={i} role="listitem" className="flex flex-col items-center text-center">
               <div className="mb-1.5 text-neutral-500 dark:text-neutral-400">
@@ -139,7 +156,7 @@ export default function Compare() {
         <header className="mb-6 flex flex-col items-start justify-between gap-4 md:mb-8 md:flex-row md:items-center">
           <h2
             id="compare-heading"
-            className="text-balance text-[28px] font-semibold tracking-tight md:text-[32px]"
+            className="text-balance text-3xl md:text-5xl font-semibold tracking-tight"
           >
             Keep exploring iPhone.
           </h2>
@@ -160,6 +177,7 @@ export default function Compare() {
               imageAlt="Front view of iPhone 16e in white and partial back showing camera"
               price="From $599 or $24.95/mo. for 24 mo."
               buyHref="/us/shop/goto/buy_iphone/iphone_16e"
+              image={iphoneProMaxImg}
               colors={[
                 { className: 'bg-white', label: 'White' },
                 { className: 'bg-black', label: 'Black' },
@@ -177,6 +195,7 @@ export default function Compare() {
               price="From $799 or $33.29/mo. for 24 mo."
               learnHref="/iphone-16/"
               buyHref="/us/shop/goto/buy_iphone/iphone_16"
+              image={iphonePinkImg}
               colors={[
                 { className: 'bg-blue-500', label: 'Ultramarine' },
                 { className: 'bg-emerald-500', label: 'Teal' },
