@@ -47,15 +47,13 @@ export default function Hero() {
             >
               <a href="#buy">Book</a>
             </AppleButton>
-            <AppleButton variant="link" asChild>
-              <a href="#gallery" className="text-[var(--accent)]">Watch the film</a>
-            </AppleButton>
+           
           </div>
 
-          <figure className="relative w-full max-w-[1600px] mx-auto" style={{ marginTop: -20 }}>
+          <figure className="relative w-full max-w-[1600px] mx-auto" style={{ marginTop: -90 }}>
             <Image
               src={heroPhone}
-              alt="Phone 16e - Big on the basics. Bold on battery. Beautifully bright."
+              alt="Rudy Series 10"
               width={1600}
               height={3200}
               className="w-full h-auto rounded-[32px] animate-hero-in"

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 function Row({ title, body, reverse = false, image, alt }: { title: string; body: string; reverse?: boolean; image?: StaticImageData; alt?: string }) {
   return (
-    <div className={`grid items-center gap-6 md:grid-cols-2 ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}>
+    <div className={`grid items-center gap-4 md:gap-5 md:grid-cols-2 ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}>
       <div className="aspect-[16/10] relative reveal-up">
         {image ? (
           <Image
@@ -20,10 +20,10 @@ function Row({ title, body, reverse = false, image, alt }: { title: string; body
         )}
       </div>
       <div className="reveal-up">
-        <h3 className="text-3xl md:text-4xl font-bold leading-tight max-w-[30ch]">
+        <h3 className="text-3xl md:text-4xl font-bold leading-tight text-balance max-w-[20ch] md:max-w-[22ch]">
           {title}
         </h3>
-        <p className="mt-3 text-lg md:text-xl text-muted-foreground leading-snug max-w-[56ch]">
+        <p className="mt-3 text-lg md:text-xl text-muted-foreground leading-snug text-balance whitespace-pre-line max-w-[42ch] md:max-w-[48ch]">
           {body}
         </p>
       </div>
@@ -75,20 +75,20 @@ export default function River() {
         <div className="space-y-16">
           <Row
             title="Built to go places."
-            body="All-day energy and passion pushes Rudy beyond .COM to explore all corners of the world."
+            body="From .COM to dot-everywhere,Tested across climates, cuisines, and countless boarding gates. "
             image={airpodsImg}
             alt="AirPods product image"
           />
           <Row
             title="Bright, accurate, adaptive."
-            body="Brillaint, sharp wit translates to indoor, outdoor , social and work activities"
+            body="Brillaint, sharp wit translates seamlessly indoor, outdoor , from boardrooms to brunchtables"
             reverse
             image={macImg}
             alt="Mac product image"
           />
           <Row
             title="Limited Edition. Unlimited Ambition."
-            body="Fashion-forward operating system.Aesthetic precision with passion thats always in season."
+            body={"Fashion-forward operating system.\nAesthetic precision with passion thats always in season."}
             image={watchImg}
             alt="Apple Watch product image"
           />

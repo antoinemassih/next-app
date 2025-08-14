@@ -4,28 +4,60 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const slides = [
   {
-    quote: "Rudy transformed our launch from good to unforgettable.",
-    author: "Alex Rivera",
-    role: "VP Marketing, Acme Co.",
+    quote: "Raghda was the reason I didn’t quit my job after just a few weeks of joining the company. Nine and a half years later, I’m still here. Thank you, Raghoood. ❤️❤️❤️",
+    author: "Apple Marcom emplloyee",
+    role: "",
     background: "bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900",
   },
   {
-    quote: "The strategic clarity and creative discipline were next-level.",
-    author: "Priya Shah",
-    role: "Founder, Nova Labs",
+    quote: ` It was 2015, and we were in London working on one tough project — launching apple.com in Arabic. I still remember Raghdah and I sitting at lunch, completely exhausted from all the travel and utterly overwhelmed. We felt lost. I looked at her and said, “I’m done, this is exhausting. I don’t know how long I can last.”
+
+She looked back at me and said, “Same. I’m probably here for just one year.”
+
+That was one very long year, Raghdah!
+
+If there’s one person who defined those early days for me, and somehow still managed to deal with all my nonsense - it’s Raghdah. 
+
+Raghdah is brilliant, incredibly hardworking, smart, very funny (in her own witty way). I’m lucky to have started my career with her 10 years ago!
+
+Congratulations on a little more than just one year.`,
+    author: "Apple Marcom employee",
+    role: "",
     background: "bg-gradient-to-br from-emerald-800 via-teal-800 to-cyan-800",
   },
   {
-    quote: "I've never seen a team move this fast without compromising quality.",
-    author: "Marcus Lee",
-    role: "Head of Product, Orbit",
+    quote: "Raghdah has such a beautiful soul, and we always look forward to seeing her at the office because she’s sure to greet you with a big, warm smile. Congratulations on your 10-year milestone, cheers to you from — Apple PR Team",
+    author: "Apple PR Team",
+    role: "",
     background: "bg-gradient-to-br from-orange-800 via-red-800 to-pink-800",
   },
   {
-    quote: "Rudy is the rare mix of producer, strategist, and creative director.",
-    author: "Sofia Martins",
-    role: "Creative Lead, Beacon",
+    quote: "From the very first day we started working together you have been incredibly positive and supportive. You somehow manage to keep your radar list perfectly clean, which I am convinced is a real superpower 😎. It is something I have been trying to do myself, so far without much success 😭. It has been such a pleasure working with you and even though we are in different PODs, I always look forward to any chance we get to collaborate. And of course I am super grateful for the amazing Interactive Safaris you have organised for us. They are always such a highlight. Here is to many more great moments and the next Safari 🥂",
+    author: "Apple Marcom employee",
+    role: "",
     background: "bg-gradient-to-br from-slate-800 via-gray-800 to-zinc-900",
+  },
+  {
+    quote: "Great working with you in one team! Wishing you another 10+++ years of challenging, yet rewarding launches, inspiring briefs, adventurous customer - and personal - journeys and fun!",
+    author: "Apple Marcom Employee",
+    role: "",
+    background: "bg-gradient-to-br from-indigo-800 via-blue-800 to-cyan-800",
+  },
+  {
+    quote: "if you want something done, give it to Raghdah.",
+    author: "Apple Marcom Employee",
+    role: "",
+    background: "bg-gradient-to-br from-fuchsia-800 via-rose-800 to-red-800",
+  },
+  {
+    quote: `I’ve known Raghdah for almost 10 years, and she’s always been that rare mix of calm, thoughtful, and effortlessly professional. She’s incredibly easy to talk to, and her energy naturally brings people together. She’s also the one you turn to when there’s something tricky to solve.
+
+Over the years, she’s been a steady presence — genuinely supportive and always up for a laugh. From the workshop fun in Cupertino to the rollercoaster of CEMEA merge — it’s been an absolute joy working alongside her.
+
+Happy 10 years, dear Raghdah!`,
+    author: "Apple Marcom employee",
+    role: "",
+    background: "bg-gradient-to-br from-teal-800 via-emerald-800 to-green-800",
   },
 ];
 

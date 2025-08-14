@@ -20,7 +20,7 @@ export default function Home() {
       <FeatureGrid />
       <River />
       <Carousel />
-      <MemojiStrip />
+     
       <Gallery />
     
       

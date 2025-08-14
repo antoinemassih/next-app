@@ -3,8 +3,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "iPhone 16e - Latest iPhone. Greatest price.",
-  description: "iPhone 16e. Built for Apple Intelligence. Big on the basics. Bold on battery. Beautifully bright.",
+  title: "Rudy Series 10",
+  description: "Rudy Series 10. Built for Actual Intelligence. ",
 };
 
 export default function RootLayout({
