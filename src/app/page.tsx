@@ -20,8 +20,7 @@ export default function Home() {
       <River />
       <Carousel />
       <Gallery />
-      <Specs />
-      <BuyCta />
+    
       
       <Compare />
       <Footer />

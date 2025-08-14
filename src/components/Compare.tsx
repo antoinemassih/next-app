@@ -1,224 +1,147 @@
-import { AppleButton } from "@/components/ui/apple-button";
 import { SectionContainer } from "@/components/ui/section-container";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import iphoneProMaxImg from "../../assets/compare_iphone16_pro_max_natural_titanium_large.png";
 import iphonePinkImg from "../../assets/compare_iphone16_pink_large.png";
 
-function ColorDot({ className, label }: { className: string; label: string }) {
-  return (
-    <li className="inline-flex items-center" role="listitem">
-      <span className={`mr-1 inline-block size-3 rounded-full ring-1 ring-black/10 ${className}`}></span>
-      <span className="sr-only">{label}</span>
-    </li>
-  );
-}
-
-function FeatureIcon({ name }: { name: string }) {
-  const n = name.toLowerCase();
+// Inline icon set used for the comparison items
+function Icon({ name }: { name: "eye" | "chip" | "drive" | "spark" | "energy" | "wifi" }) {
   const stroke = "currentColor";
-  const common = { width: 24, height: 24, viewBox: "0 0 24 24" } as const;
-  if (n.includes("battery")) {
-    return (
-      <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="1.5">
-        <rect x="3" y="7" width="16" height="10" rx="2" />
-        <rect x="19" y="10" width="2" height="4" rx="1" />
-      </svg>
-    );
+  const common = { width: 32, height: 32, viewBox: "0 0 24 24" } as const;
+  switch (name) {
+    case "eye":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      );
+    case "chip":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2">
+          <rect x="7" y="7" width="10" height="10" rx="2" />
+          <path d="M4 9h3M4 15h3M17 9h3M17 15h3M9 4v3M15 4v3M9 17v3M15 17v3" />
+        </svg>
+      );
+    case "drive":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="6" width="18" height="12" rx="2" />
+          <circle cx="8" cy="12" r="1" />
+          <circle cx="12" cy="12" r="1" />
+          <circle cx="16" cy="12" r="1" />
+        </svg>
+      );
+    case "spark":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v6M12 16v6M2 12h6M16 12h6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M19.1 4.9l-4.2 4.2M9.1 14.9l-4.2 4.2" />
+        </svg>
+      );
+    case "energy":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+        </svg>
+      );
+    case "wifi":
+      return (
+        <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 8a14 14 0 0 1 20 0" />
+          <path d="M5 11a10 10 0 0 1 14 0" />
+          <path d="M8 14a6 6 0 0 1 8 0" />
+          <circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none" />
+        </svg>
+      );
   }
-  if (n.includes("chip") || n.includes("gpu")) {
-    return (
-      <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="1.5">
-        <rect x="6" y="6" width="12" height="12" rx="2" />
-        <path d="M3 9h3M3 15h3M18 9h3M18 15h3M9 3v3M15 3v3M9 18v3M15 18v3" />
-      </svg>
-    );
-  }
-  if (n.includes("camera") || n.includes("telephoto") || n.includes("ultra")) {
-    return (
-      <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="1.5">
-        <rect x="3" y="6" width="18" height="14" rx="3" />
-        <circle cx="12" cy="13" r="4" />
-        <circle cx="18" cy="9" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    );
-  }
-  if (n.includes("apple intelligence") || n.includes("intelligence")) {
-    return (
-      <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="1.5">
-        <path d="M12 3v18M3 12h18" />
-        <circle cx="12" cy="12" r="6" />
-      </svg>
-    );
-  }
-  // default info dot
-  return (
-    <svg {...common} aria-hidden fill="none" stroke={stroke} strokeWidth="1.5">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 8.5h.01M11 11h2v5h-2z" />
-    </svg>
-  );
 }
 
-function ProductTile(props: {
-  title: string;
-  imageAlt: string;
-  price: string;
-  learnHref?: string;
-  buyHref: string;
-  colors: { className: string; label: string }[];
-  features: string[];
-  image?: StaticImageData;
-}) {
-  const { title, imageAlt, price, learnHref, buyHref, colors, features, image } = props;
-  return (
-    <li className="flex w-full flex-col p-2 md:p-3">
-      <h3 className="px-2 pt-2 text-center">
-        <span className="block text-balance text-3xl md:text-4xl font-semibold tracking-tight" aria-hidden>
-          {title}
-        </span>
-        <span className="sr-only">{title}</span>
-      </h3>
-
-      <div className="mt-3 aspect-[5/4] w-full overflow-hidden p-10 md:p-14 xl:p-16">
-        {image ? (
-          <div className="relative h-full w-full">
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority={false}
-            />
-          </div>
-        ) : (
-          <div className="flex h-full items-center justify-center text-center text-[11px] text-neutral-500">
-            <span className="px-3 py-1" aria-label={imageAlt}>
-              {imageAlt}
-            </span>
-          </div>
-        )}
-      </div>
-
-      <div className="mt-4 px-2">
-        <ul className="flex items-center justify-center gap-1.5" role="list" aria-label="Available colors">
-          {colors.map((c, i) => (
-            <ColorDot key={i} className={c.className} label={c.label} />
-          ))}
-          <li className="text-sm md:text-base text-neutral-500" aria-hidden>
-            +
-          </li>
-        </ul>
-      </div>
-
-      <p className="mt-1.5 px-2 text-center text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200">{price}</p>
-
-      <div className="mt-3 flex items-center justify-center gap-3 px-2">
-        {learnHref && (
-          <AppleButton
-            variant="link"
-            asChild
-            aria-label={`Learn more about ${title}`}
-          >
-            <a href={learnHref} className="text-base md:text-lg">
-              Learn more <span aria-hidden>›</span>
-            </a>
-          </AppleButton>
-        )}
-        <AppleButton
-          variant="primary"
-          asChild
-          aria-label={`Book ${title}`}
-        >
-          <a href={buyHref} className="text-base md:text-lg">Book</a>
-        </AppleButton>
-      </div>
-
-      <div className="mt-4 px-2">
-        <ul className="grid gap-3 text-base md:text-lg font-medium text-neutral-900 dark:text-neutral-100" role="list">
-          {features.map((f, i) => (
-            <li key={i} role="listitem" className="flex flex-col items-center text-center">
-              <div className="mb-1.5 text-neutral-500 dark:text-neutral-400">
-                <FeatureIcon name={f} />
-              </div>
-              <p>{f}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </li>
-  );
-}
+type Item = { icon: "eye" | "chip" | "drive" | "spark" | "energy" | "wifi"; text: string };
+const dayOne: Item[] = [
+  { icon: "eye", text: "Sharp eye for insight." },
+  { icon: "chip", text: "Fast thinker with zero lag on ideas." },
+  { icon: "drive", text: "Overflowing with creativity." },
+  { icon: "spark", text: "Bright, engaging, impossible to ignore." },
+  { icon: "energy", text: "Could power through campaigns." },
+  { icon: "wifi", text: "Instantly connected with every team and client." },
+];
+const today: Item[] = [
+  { icon: "eye", text: "Industry-leading vision, no filter needed." },
+  { icon: "chip", text: "Multi-core strategic thinking. runs on experience and instinct." },
+  { icon: "drive", text: "Expanded capacity for big-picture campaigns and micro-detail resolution." },
+  { icon: "spark", text: "Brilliance now in HDR." },
+  { icon: "energy", text: "Fuels multiple campaigns, energyizing the team." },
+  { icon: "wifi", text: "Global network, seamless collaboration, and industrial grade charisma." },
+];
 
 export default function Compare() {
   return (
     <SectionContainer id="compare" aria-labelledby="compare-heading">
-        <header className="mb-6 flex flex-col items-start justify-between gap-4 md:mb-8 md:flex-row md:items-center">
+        <header className="mb-6 flex flex-col items-center justify-center gap-3 md:mb-10">
           <h2
             id="compare-heading"
-            className="text-balance text-3xl md:text-5xl font-semibold tracking-tight"
+            className="text-balance text-center text-2xl md:text-4xl font-semibold tracking-tight"
           >
-            Keep exploring iPhone.
+            Awesome at launch. Legendary today
           </h2>
-          <div>
-            <a
-              href="/iphone/"
-              className="inline-flex items-center gap-1 text-[13px] font-semibold text-blue-600 hover:underline underline-offset-4 dark:text-blue-400"
-            >
-              Explore all iPhone <span aria-hidden>›</span>
-            </a>
-          </div>
+          <div />
         </header>
 
         <div>
           <ul className="grid gap-6 md:grid-cols-2" role="list">
-            <ProductTile
-              title="iPhone 16e"
-              imageAlt="Front view of iPhone 16e in white and partial back showing camera"
-              price="From $599 or $24.95/mo. for 24 mo."
-              buyHref="/us/shop/goto/buy_iphone/iphone_16e"
-              image={iphoneProMaxImg}
-              colors={[
-                { className: 'bg-white', label: 'White' },
-                { className: 'bg-black', label: 'Black' },
-              ]}
-              features={[
-                '2‑in‑1 camera system',
-                '48MP Fusion camera',
-                '2x Telephoto',
-              ]}
-            />
+          <li className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-neutral-800" role="listitem">
+              <h3 className="text-center text-2xl md:text-3xl font-semibold tracking-tight">Rudy <span className="text-blue-500">Series 10</span></h3>
+              <p className="mt-1.5 text-center text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200">still priceless/mo. for 24 mo.</p>
+              <div className="mt-4 aspect-[5/4] w-full overflow-hidden p-8 md:p-12">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={iphoneProMaxImg}
+                    alt="Front of iPhone and partial back showing camera"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={false}
+                  />
+                </div>
+              </div>
+              <ul className="mt-5 space-y-5 text-[15px] md:text-base leading-relaxed text-neutral-800 dark:text-neutral-200" role="list">
+                {today.map((it, i) => (
+                  <li key={i} className="flex flex-col items-center text-center gap-2">
+                    <span className="text-neutral-700 dark:text-neutral-200"><Icon name={it.icon} /></span>
+                    <p className="flex-1">{it.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            {/* Column 1 — Day One (2015) */}
+            <li className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-neutral-800" role="listitem">
+              <h3 className="text-center text-2xl md:text-3xl font-semibold tracking-tight">Rudy <span className="text-pink-500">Series 1</span></h3>
+              <p className="mt-1.5 text-center text-lg md:text-xl font-medium text-neutral-800 dark:text-neutral-200">Priceless/mo. for 24 mo.</p>
+              <div className="mt-4 aspect-[5/4] w-full overflow-hidden p-8 md:p-12">
+                <div className="relative h-full w-full">
+                  <Image
+                    
+                    src={iphonePinkImg}
+                    alt="Front view of iPhone in natural titanium"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={false}
+                  />
+                </div>
+              </div>
+              <ul className="mt-5 space-y-5 text-[15px] md:text-base leading-relaxed text-neutral-800 dark:text-neutral-200" role="list">
+                {dayOne.map((it, i) => (
+                  <li key={i} className="flex flex-col items-center text-center gap-2">
+                    <span className="text-neutral-700 dark:text-neutral-200"><Icon name={it.icon} /></span>
+                    <p className="flex-1">{it.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </li>
 
-            <ProductTile
-              title="iPhone 16"
-              imageAlt="Front of iPhone 16 in ultramarine and partial back of iPhone 16 Plus"
-              price="From $799 or $33.29/mo. for 24 mo."
-              learnHref="/iphone-16/"
-              buyHref="/us/shop/goto/buy_iphone/iphone_16"
-              image={iphonePinkImg}
-              colors={[
-                { className: 'bg-blue-500', label: 'Ultramarine' },
-                { className: 'bg-emerald-500', label: 'Teal' },
-                { className: 'bg-pink-400', label: 'Pink' },
-                { className: 'bg-white', label: 'White' },
-                { className: 'bg-black', label: 'Black' },
-              ]}
-              features={[
-                'Advanced dual‑camera system',
-                'Advanced 48MP Fusion camera',
-                '2x Telephoto',
-                '12MP Ultra Wide camera',
-              ]}
-            />
+            {/* Column 2 — Today (2025) */}
+            
           </ul>
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <AppleButton variant="link" asChild>
-            <a href="/iphone/compare/">
-              Compare all iPhone models <span aria-hidden>›</span>
-            </a>
-          </AppleButton>
         </div>
     </SectionContainer>
   );
